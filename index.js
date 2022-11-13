@@ -8,7 +8,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
-  res.send('Hello world home page')
+  res.render('Home')
 })
 
 app.get('*', (req, res) => {
