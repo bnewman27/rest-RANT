@@ -3,31 +3,36 @@ const Def = require('./default')
 
 
   
-  app.get('/', (req, res) => {
-    let places = [{
-        name: 'H-Thai-ML',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: 'Public/images/bowl001.jpg'
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: 'Public/images/bowl001.jpg'
-      }]
+//   app.get('/', (req, res) => {
+//     let places = [{
+//         name: 'H-Thai-ML',
+//         city: 'Seattle',
+//         state: 'WA',
+//         cuisines: 'Thai, Pan-Asian',
+//         pic: 'Public/images/bowl001.jpg'
+//       }, {
+//         name: 'Coding Cat Cafe',
+//         city: 'Phoenix',
+//         state: 'AZ',
+//         cuisines: 'Coffee, Bakery',
+//         pic: 'Public/images/bowl001.jpg'
+//       }]
       
-    res.render('places/index', { places })
-  })
+//     res.render('places/index', { places })
+//   })
 
-module.exports = places
+// module.exports = places
 
 function index (data) {
+    console.log(data)
     let placesFormatted = data.places.map((place) => {
       return (
         <div className="col-sm-6">
-          <h2>{place.name}</h2>
+          <h2>
+          <a href={`/places/${place.id}`}>
+            {place.name}
+          </a>
+        </h2>
           <p className="text-center">
             {place.cusinies}
           </p>
@@ -50,4 +55,5 @@ function index (data) {
     )
   }
   
-  
+
+module.exports = index
