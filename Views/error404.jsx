@@ -1,9 +1,9 @@
-const React = require('react')
-const Def = require('./default')
+const React = require('react');
+const Default = require('./default')
 
 function error404 () {
     return (
-      <Def>
+      <Default>
           <main>
               <h1>404: PAGE NOT FOUND</h1>
               <p>Oops, sorry, we can't find this page!</p>
@@ -14,9 +14,9 @@ function error404 () {
                 </div>
                 
           </main>
-      </Def>
+      </Default>
     )
   }
   
 
-module.exports = error404
+module.exports = error404;
